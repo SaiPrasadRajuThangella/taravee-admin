@@ -61,7 +61,7 @@ export default function LoginScreen() {
           <View style={styles.form}>
             <Text style={styles.label}>Username</Text>
             <TextInput
-              style={adminStyles.input}
+              style={[adminStyles.input, styles.textInput, styles.usernameInput]}
               autoCapitalize="none"
               autoCorrect={false}
               value={username}
@@ -73,7 +73,7 @@ export default function LoginScreen() {
             <Text style={[styles.label, styles.labelGap]}>Password</Text>
             <View style={styles.passwordWrap}>
               <TextInput
-                style={[adminStyles.input, styles.passwordInput]}
+                style={[adminStyles.input, styles.textInput, styles.passwordInput]}
                 secureTextEntry={!showPassword}
                 value={password}
                 onChangeText={setPassword}
@@ -154,13 +154,21 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bodyMedium,
     fontSize: 13,
     color: colors.textMuted,
+    marginBottom: 8,
   },
   labelGap: {
-    marginTop: 14,
+    marginTop: 16,
+  },
+  textInput: {
+    paddingVertical: 16,
+  },
+  usernameInput: {
+    marginBottom: 10,
   },
   passwordWrap: {
     position: 'relative',
     justifyContent: 'center',
+    marginBottom: 10,
   },
   passwordInput: {
     paddingRight: 44,
